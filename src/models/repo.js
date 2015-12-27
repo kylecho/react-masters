@@ -11,7 +11,7 @@ export default Model.extend({
     appUrl: {
       deps: ['full_name'],
       fn () {
-        return '/' + this.full_name
+        return '/repo/' + this.full_name
       }
     }
   }
