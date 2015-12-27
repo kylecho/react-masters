@@ -12,7 +12,7 @@ export default React.createClass({
         <h2>Repos</h2>
         <ul>
           {repos.map((repo) => {
-            return (<li key={repo.id}><a href="">{repo.full_name}</a></li>)
+            return (<li key={repo.id}><span className="octicon octicon-repo"></span><a href=""> {repo.full_name}</a></li>)
           })}
         </ul>
       </div>
