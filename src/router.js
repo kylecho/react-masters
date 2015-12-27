@@ -1,5 +1,6 @@
 import Router from 'ampersand-router'
 import React from 'react'
+import qs from 'qs'
 import PublicPage from './pages/public'
 import ReposPage from './pages/repos'
 import Layout from './layout'
@@ -19,7 +20,8 @@ export default Router.extend({
 
   routes: {
     '': 'public',
-    'repos': 'repos'
+    'repos': 'repos',
+    'login': 'login'
   },
 
   public () {
@@ -28,5 +30,13 @@ export default Router.extend({
 
   repos () {
     this.renderPage(<ReposPage/>)
+  },
+
+  login () {
+    window.location = 'https://github.com/login/oauth/authorize?' + qs.stringify({
+      client_id: '28c0a7f7e533b32acc6c',
+      redirect_uri: window.location.origin + '/auth/callback',
+      scope: 'user,repo'
+    })
   }
 })
