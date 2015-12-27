@@ -1,6 +1,17 @@
 import React from 'react'
+import ampersandMixin from 'ampersand-react-mixin'
 
 export default React.createClass({
+  mixins: [ampersandMixin],
+
+  onCancelClick () {
+    this.props.label.editing = false
+  },
+
+  onEditClick () {
+    this.props.label.editing = true
+  },
+
   render () {
     const {label} = this.props
     const cssColor = '#' + label.color
@@ -21,8 +32,8 @@ export default React.createClass({
         <div className='label'>
           <span className='label-color' style={{backgroundColor: cssColor}}>&nbsp;</span>
           <span>{label.name}</span>
-          <span className='octicon octicon-pencil'></span>
-          <span className='octicon octicon-x'></span>
+          <span onClick={this.onEditClick} className='octicon octicon-pencil'></span>
+          <span onClick={this.onCancelClick} className='octicon octicon-x'></span>
         </div>
       )
     }
