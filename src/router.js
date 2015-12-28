@@ -40,7 +40,7 @@ export default Router.extend({
     'logout': 'logout',
     'repo/:owner/:name': requiresAuth('repoDetail'),
     'auth/callback?:query': 'authCallback',
-    '*fourOhFour': 'fourOhFour'
+    '*fourOhfour': 'fourOhfour'
   },
 
   public () {
@@ -77,7 +77,7 @@ export default Router.extend({
       this.redirectTo('/repos')
     })
 
-    this.renderPage(<MessagePage title='Fetching your data...'/>)
+    this.renderPage(<MessagePage title='Fetching your data'/>)
   },
 
   logout () {
@@ -85,7 +85,7 @@ export default Router.extend({
     window.location = '/'
   },
 
-  fourOhFour () {
-    this.renderPage(<MessagePage title='Not Found' body='Sorry nothing here'/>)
+  fourOhfour () {
+    this.renderPage(<MessagePage title='Not Found' body='sorry nothing here'/>)
   }
 })
