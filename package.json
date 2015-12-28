@@ -1,5 +1,5 @@
 {
-  "name": "labelr",
+  "name": "labelhub",
   "version": "1.42.0",
   "dependencies": {
     "ampersand-app": "^1.0.4",
@@ -45,7 +45,7 @@
   "private": true,
   "scripts": {
     "build": "webpack",
-    "deploy": "surge -p public -d labelr.surge.sh",
+    "deploy": "surge -p public -d labelhub.surge.sh",
     "start": "webpack-dev-server",
     "yolo": "git add --all && git commit -am \"$(date)\" && npm version minor && git push origin master --tags && npm run build && npm run deploy"
   }
