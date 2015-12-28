@@ -2,7 +2,7 @@
 
 This repo is for the workshop on "Building Modern Single-Page Web Applications" workshop at [Frontend Masters, June 2015](https://frontendmasters.com/workshops/web-apps/).
 
-## Live demo
+## Live demo [Link](http://labelhub.surge.sh)
 ```
 http://labelhub.surge.sh
 ```
