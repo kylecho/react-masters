@@ -7,6 +7,7 @@ import PublicPage from './pages/public'
 import ReposPage from './pages/repos'
 import RepoDetail from './pages/repo-detail'
 import Layout from './layout'
+import MessagePage from './pages/message'
 
 function requiresAuth (handlerName) {
   return function () {
@@ -37,7 +38,8 @@ export default Router.extend({
     'login': 'login',
     'logout': 'logout',
     'repo/:owner/:name': requiresAuth('repoDetail'),
-    'auth/callback?:query': 'authCallback'
+    'auth/callback?:query': 'authCallback',
+    '*fourOhFour': 'fourOhFour'
   },
 
   public () {
@@ -73,10 +75,16 @@ export default Router.extend({
       app.me.token = body.token
       this.redirectTo('/repos')
     })
+
+    this.renderPage(<MessagePage title='Fetching your data...'/>)
   },
 
   logout () {
     window.localStorage.clear()
     window.location = '/'
+  },
+
+  fourOhFour () {
+    this.renderPage(<MessagePage title='Not Found' body='Sorry nothing here'/>)
   }
 })
