@@ -77,7 +77,7 @@ export default Router.extend({
       this.redirectTo('/repos')
     })
 
-    this.renderPage(<MessagePage title='Fetching your data'/>)
+    this.renderPage(<MessagePage title='Fetching your data...'/>)
   },
 
   logout () {
@@ -86,6 +86,6 @@ export default Router.extend({
   },
 
   fourOhfour () {
-    this.renderPage(<MessagePage title='Not Found' body='sorry nothing here'/>)
+    this.renderPage(<MessagePage title='Not Found' body='Sorry nothing here'/>)
   }
 })
